@@ -342,3 +342,4 @@ function Library.New(Name, Description)
 		script.Parent.Size = UDim2.new(0, 0, 1, 0)
 	end)
 end
+return Library
