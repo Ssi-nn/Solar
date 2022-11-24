@@ -1,345 +1,348 @@
-local Library = {}
+local Solar = {}
 
-function Library.New(Name, Description)
-	solar_library = Instance.new("ScreenGui")
-	solar_library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	solar_library.Name = Name
-	solar_library.Parent = game.CoreGui
-	launcher = Instance.new("Frame")
-	launcher.AnchorPoint = Vector2.new(0.5, 0.5)
-	launcher.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	launcher.Position = UDim2.new(0.5, 0, 0.5, 0)
-	launcher.Size = UDim2.new(0, 300, 0, 150)
-	launcher.Name = "Launcher"
-	launcher.Parent = solar_library
-	uicorner = Instance.new("UICorner")
-	uicorner.Parent = launcher
-	uistroke = Instance.new("UIStroke")
-	uistroke.Color = Color3.new(0.533333, 0.533333, 0.533333)
-	uistroke.Thickness = 1.5
-	uistroke.Parent = launcher
-	top_left = Instance.new("Frame")
-	top_left.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	top_left.BackgroundTransparency = 1
-	top_left.BorderSizePixel = 0
-	top_left.Size = UDim2.new(0, 150, 0, 75)
-	top_left.Name = "Top_Left"
-	top_left.Parent = launcher
-	uicorner_2 = Instance.new("UICorner")
-	uicorner_2.Parent = top_left
-	nocorner = Instance.new("Frame")
-	nocorner.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	nocorner.BackgroundTransparency = 1
-	nocorner.BorderSizePixel = 0
-	nocorner.Position = UDim2.new(0, 0, 0.906666696, 0)
-	nocorner.Size = UDim2.new(0, 150, 0, 7)
-	nocorner.Name = "NOCorner"
-	nocorner.Parent = top_left
-	nocorner_2 = Instance.new("Frame")
-	nocorner_2.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	nocorner_2.BackgroundTransparency = 1
-	nocorner_2.BorderSizePixel = 0
-	nocorner_2.Position = UDim2.new(0.953333318, 0, 0, 0)
-	nocorner_2.Size = UDim2.new(0, 7, 0, 74)
-	nocorner_2.Name = "NOCorner"
-	nocorner_2.Parent = top_left
-	bottom_left = Instance.new("Frame")
-	bottom_left.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	bottom_left.BackgroundTransparency = 1
-	bottom_left.BorderSizePixel = 0
-	bottom_left.Position = UDim2.new(0, 0, 0.5, 0)
-	bottom_left.Size = UDim2.new(0, 150, 0, 75)
-	bottom_left.Name = "Bottom_Left"
-	bottom_left.Parent = launcher
-	uicorner_3 = Instance.new("UICorner")
-	uicorner_3.Parent = bottom_left
-	nocorner_3 = Instance.new("Frame")
-	nocorner_3.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	nocorner_3.BackgroundTransparency = 1
-	nocorner_3.BorderSizePixel = 0
-	nocorner_3.Position = UDim2.new(0.953333318, 0, 0, 0)
-	nocorner_3.Size = UDim2.new(0, 7, 0, 75)
-	nocorner_3.Name = "NOCorner"
-	nocorner_3.Parent = bottom_left
-	nocorner_4 = Instance.new("Frame")
-	nocorner_4.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	nocorner_4.BackgroundTransparency = 1
-	nocorner_4.BorderSizePixel = 0
-	nocorner_4.Size = UDim2.new(0, 7, 0, 47)
-	nocorner_4.Name = "NOCorner"
-	nocorner_4.Parent = bottom_left
-	top_right = Instance.new("Frame")
-	top_right.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	top_right.BackgroundTransparency = 1
-	top_right.BorderSizePixel = 0
-	top_right.Position = UDim2.new(0.5, 0, -0, 0)
-	top_right.Size = UDim2.new(0, 150, 0, 75)
-	top_right.Name = "Top_Right"
-	top_right.Parent = launcher
-	uicorner_4 = Instance.new("UICorner")
-	uicorner_4.Parent = top_right
-	nocorner_5 = Instance.new("Frame")
-	nocorner_5.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	nocorner_5.BackgroundTransparency = 1
-	nocorner_5.BorderSizePixel = 0
-	nocorner_5.Position = UDim2.new(0, 0, 0.906666696, 0)
-	nocorner_5.Size = UDim2.new(0, 150, 0, 7)
-	nocorner_5.Name = "NOCorner"
-	nocorner_5.Parent = top_right
-	nocorner_6 = Instance.new("Frame")
-	nocorner_6.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	nocorner_6.BackgroundTransparency = 1
-	nocorner_6.BorderSizePixel = 0
-	nocorner_6.Size = UDim2.new(0, 7, 0, 75)
-	nocorner_6.Name = "NOCorner"
-	nocorner_6.Parent = top_right
-	bottom_right = Instance.new("Frame")
-	bottom_right.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	bottom_right.BackgroundTransparency = 1
-	bottom_right.BorderSizePixel = 0
-	bottom_right.Position = UDim2.new(0.5, 0, 0.496666908, 0)
-	bottom_right.Size = UDim2.new(0, 150, 0, 75)
-	bottom_right.Name = "Bottom_Right"
-	bottom_right.Parent = launcher
-	uicorner_5 = Instance.new("UICorner")
-	uicorner_5.Parent = bottom_right
-	nocorner_7 = Instance.new("Frame")
-	nocorner_7.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	nocorner_7.BackgroundTransparency = 1
-	nocorner_7.BorderSizePixel = 0
-	nocorner_7.Size = UDim2.new(0, 7, 0, 75)
-	nocorner_7.Name = "NOCorner"
-	nocorner_7.Parent = bottom_right
-	nocorner_8 = Instance.new("Frame")
-	nocorner_8.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-	nocorner_8.BackgroundTransparency = 1
-	nocorner_8.BorderSizePixel = 0
-	nocorner_8.Position = UDim2.new(0.953333318, 0, 0, 0)
-	nocorner_8.Size = UDim2.new(0, 7, 0, 47)
-	nocorner_8.Name = "NOCorner"
-	nocorner_8.Parent = bottom_right
-	connect = Instance.new("LocalScript")
-	connect.Name = "Connect"
-	connect.Parent = launcher
-	namer = Instance.new("TextLabel")
-	namer.Font = Enum.Font.Code
-	namer.Text = Name
-	namer.TextColor3 = Color3.new(0.890196, 0.890196, 0.890196)
-	namer.TextSize = 16
-	namer.TextStrokeColor3 = Color3.new(0.835294, 0.835294, 0.835294)
-	namer.TextStrokeTransparency = 0.699999988079071
-	namer.TextXAlignment = Enum.TextXAlignment.Left
-	namer.BackgroundColor3 = Color3.new(1, 1, 1)
-	namer.BackgroundTransparency = 1
-	namer.Position = UDim2.new(0.176666677, 0, 0.360000014, 0)
-	namer.Size = UDim2.new(0, 149, 0, 15)
-	namer.Name = "Namer"
-	namer.Parent = launcher
-	developer = Instance.new("TextLabel")
-	developer.Font = Enum.Font.Code
-	developer.Text = Description
-	developer.TextColor3 = Color3.new(0.619608, 0.619608, 0.619608)
-	developer.TextSize = 9
-	developer.TextXAlignment = Enum.TextXAlignment.Left
-	developer.BackgroundColor3 = Color3.new(1, 1, 1)
-	developer.BackgroundTransparency = 1
-	developer.Position = UDim2.new(0.176666677, 0, 0.460000008, 0)
-	developer.Size = UDim2.new(0, 149, 0, 19)
-	developer.Name = "Developer"
-	developer.Parent = launcher
-	loader = Instance.new("Frame")
-	loader.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
-	loader.Position = UDim2.new(0.176666677, 0, 0.623333335, 0)
-	loader.Size = UDim2.new(0, 193, 0, 2)
-	loader.Name = "Loader"
-	loader.Parent = launcher
-	uistroke_2 = Instance.new("UIStroke")
-	uistroke_2.Color = Color3.new(0.156863, 0.156863, 0.156863)
-	uistroke_2.Thickness = 1.5
-	uistroke_2.Parent = loader
-	uicorner_6 = Instance.new("UICorner")
-	uicorner_6.CornerRadius = UDim.new(1, 0)
-	uicorner_6.Parent = loader
-	loaded = Instance.new("Frame")
-	loaded.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
-	loaded.Size = UDim2.new(0, 141, 1, 0)
-	loaded.Name = "Loaded"
-	loaded.Parent = loader
-	uicorner_7 = Instance.new("UICorner")
-	uicorner_7.CornerRadius = UDim.new(1, 0)
-	uicorner_7.Parent = loaded
-	percentage = Instance.new("LocalScript")
-	percentage.Name = "Percentage"
-	percentage.Parent = loaded
-	modules = {}
+function Solar.Load(Name, Description)
+	local Launcher = {}
+    function Load.Launcher()
+        solar_library = Instance.new("ScreenGui")
+        solar_library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        solar_library.Name = Name
+        solar_library.Parent = game.CoreGui
+        launcher = Instance.new("Frame")
+        launcher.AnchorPoint = Vector2.new(0.5, 0.5)
+        launcher.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        launcher.Position = UDim2.new(0.5, 0, 0.5, 0)
+        launcher.Size = UDim2.new(0, 300, 0, 150)
+        launcher.Name = "Launcher"
+        launcher.Parent = solar_library
+        uicorner = Instance.new("UICorner")
+        uicorner.Parent = launcher
+        uistroke = Instance.new("UIStroke")
+        uistroke.Color = Color3.new(0.533333, 0.533333, 0.533333)
+        uistroke.Thickness = 1.5
+        uistroke.Parent = launcher
+        top_left = Instance.new("Frame")
+        top_left.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        top_left.BackgroundTransparency = 1
+        top_left.BorderSizePixel = 0
+        top_left.Size = UDim2.new(0, 150, 0, 75)
+        top_left.Name = "Top_Left"
+        top_left.Parent = launcher
+        uicorner_2 = Instance.new("UICorner")
+        uicorner_2.Parent = top_left
+        nocorner = Instance.new("Frame")
+        nocorner.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        nocorner.BackgroundTransparency = 1
+        nocorner.BorderSizePixel = 0
+        nocorner.Position = UDim2.new(0, 0, 0.906666696, 0)
+        nocorner.Size = UDim2.new(0, 150, 0, 7)
+        nocorner.Name = "NOCorner"
+        nocorner.Parent = top_left
+        nocorner_2 = Instance.new("Frame")
+        nocorner_2.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        nocorner_2.BackgroundTransparency = 1
+        nocorner_2.BorderSizePixel = 0
+        nocorner_2.Position = UDim2.new(0.953333318, 0, 0, 0)
+        nocorner_2.Size = UDim2.new(0, 7, 0, 74)
+        nocorner_2.Name = "NOCorner"
+        nocorner_2.Parent = top_left
+        bottom_left = Instance.new("Frame")
+        bottom_left.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        bottom_left.BackgroundTransparency = 1
+        bottom_left.BorderSizePixel = 0
+        bottom_left.Position = UDim2.new(0, 0, 0.5, 0)
+        bottom_left.Size = UDim2.new(0, 150, 0, 75)
+        bottom_left.Name = "Bottom_Left"
+        bottom_left.Parent = launcher
+        uicorner_3 = Instance.new("UICorner")
+        uicorner_3.Parent = bottom_left
+        nocorner_3 = Instance.new("Frame")
+        nocorner_3.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        nocorner_3.BackgroundTransparency = 1
+        nocorner_3.BorderSizePixel = 0
+        nocorner_3.Position = UDim2.new(0.953333318, 0, 0, 0)
+        nocorner_3.Size = UDim2.new(0, 7, 0, 75)
+        nocorner_3.Name = "NOCorner"
+        nocorner_3.Parent = bottom_left
+        nocorner_4 = Instance.new("Frame")
+        nocorner_4.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        nocorner_4.BackgroundTransparency = 1
+        nocorner_4.BorderSizePixel = 0
+        nocorner_4.Size = UDim2.new(0, 7, 0, 47)
+        nocorner_4.Name = "NOCorner"
+        nocorner_4.Parent = bottom_left
+        top_right = Instance.new("Frame")
+        top_right.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        top_right.BackgroundTransparency = 1
+        top_right.BorderSizePixel = 0
+        top_right.Position = UDim2.new(0.5, 0, -0, 0)
+        top_right.Size = UDim2.new(0, 150, 0, 75)
+        top_right.Name = "Top_Right"
+        top_right.Parent = launcher
+        uicorner_4 = Instance.new("UICorner")
+        uicorner_4.Parent = top_right
+        nocorner_5 = Instance.new("Frame")
+        nocorner_5.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        nocorner_5.BackgroundTransparency = 1
+        nocorner_5.BorderSizePixel = 0
+        nocorner_5.Position = UDim2.new(0, 0, 0.906666696, 0)
+        nocorner_5.Size = UDim2.new(0, 150, 0, 7)
+        nocorner_5.Name = "NOCorner"
+        nocorner_5.Parent = top_right
+        nocorner_6 = Instance.new("Frame")
+        nocorner_6.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        nocorner_6.BackgroundTransparency = 1
+        nocorner_6.BorderSizePixel = 0
+        nocorner_6.Size = UDim2.new(0, 7, 0, 75)
+        nocorner_6.Name = "NOCorner"
+        nocorner_6.Parent = top_right
+        bottom_right = Instance.new("Frame")
+        bottom_right.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        bottom_right.BackgroundTransparency = 1
+        bottom_right.BorderSizePixel = 0
+        bottom_right.Position = UDim2.new(0.5, 0, 0.496666908, 0)
+        bottom_right.Size = UDim2.new(0, 150, 0, 75)
+        bottom_right.Name = "Bottom_Right"
+        bottom_right.Parent = launcher
+        uicorner_5 = Instance.new("UICorner")
+        uicorner_5.Parent = bottom_right
+        nocorner_7 = Instance.new("Frame")
+        nocorner_7.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        nocorner_7.BackgroundTransparency = 1
+        nocorner_7.BorderSizePixel = 0
+        nocorner_7.Size = UDim2.new(0, 7, 0, 75)
+        nocorner_7.Name = "NOCorner"
+        nocorner_7.Parent = bottom_right
+        nocorner_8 = Instance.new("Frame")
+        nocorner_8.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+        nocorner_8.BackgroundTransparency = 1
+        nocorner_8.BorderSizePixel = 0
+        nocorner_8.Position = UDim2.new(0.953333318, 0, 0, 0)
+        nocorner_8.Size = UDim2.new(0, 7, 0, 47)
+        nocorner_8.Name = "NOCorner"
+        nocorner_8.Parent = bottom_right
+        connect = Instance.new("LocalScript")
+        connect.Name = "Connect"
+        connect.Parent = launcher
+        namer = Instance.new("TextLabel")
+        namer.Font = Enum.Font.Code
+        namer.Text = Name
+        namer.TextColor3 = Color3.new(0.890196, 0.890196, 0.890196)
+        namer.TextSize = 16
+        namer.TextStrokeColor3 = Color3.new(0.835294, 0.835294, 0.835294)
+        namer.TextStrokeTransparency = 0.699999988079071
+        namer.TextXAlignment = Enum.TextXAlignment.Left
+        namer.BackgroundColor3 = Color3.new(1, 1, 1)
+        namer.BackgroundTransparency = 1
+        namer.Position = UDim2.new(0.176666677, 0, 0.360000014, 0)
+        namer.Size = UDim2.new(0, 149, 0, 15)
+        namer.Name = "Namer"
+        namer.Parent = launcher
+        developer = Instance.new("TextLabel")
+        developer.Font = Enum.Font.Code
+        developer.Text = Description
+        developer.TextColor3 = Color3.new(0.619608, 0.619608, 0.619608)
+        developer.TextSize = 9
+        developer.TextXAlignment = Enum.TextXAlignment.Left
+        developer.BackgroundColor3 = Color3.new(1, 1, 1)
+        developer.BackgroundTransparency = 1
+        developer.Position = UDim2.new(0.176666677, 0, 0.460000008, 0)
+        developer.Size = UDim2.new(0, 149, 0, 19)
+        developer.Name = "Developer"
+        developer.Parent = launcher
+        loader = Instance.new("Frame")
+        loader.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+        loader.Position = UDim2.new(0.176666677, 0, 0.623333335, 0)
+        loader.Size = UDim2.new(0, 193, 0, 2)
+        loader.Name = "Loader"
+        loader.Parent = launcher
+        uistroke_2 = Instance.new("UIStroke")
+        uistroke_2.Color = Color3.new(0.156863, 0.156863, 0.156863)
+        uistroke_2.Thickness = 1.5
+        uistroke_2.Parent = loader
+        uicorner_6 = Instance.new("UICorner")
+        uicorner_6.CornerRadius = UDim.new(1, 0)
+        uicorner_6.Parent = loader
+        loaded = Instance.new("Frame")
+        loaded.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
+        loaded.Size = UDim2.new(0, 141, 1, 0)
+        loaded.Name = "Loaded"
+        loaded.Parent = loader
+        uicorner_7 = Instance.new("UICorner")
+        uicorner_7.CornerRadius = UDim.new(1, 0)
+        uicorner_7.Parent = loaded
+        percentage = Instance.new("LocalScript")
+        percentage.Name = "Percentage"
+        percentage.Parent = loaded
+        modules = {}
 
-	task.spawn(function()
-		script = connect
+        task.spawn(function()
+            script = connect
 
-		oldreq = require
-		function require(target)
-			if modules[target] then
-				return modules[target]()
-			end
-			return oldreq(target)
-		end
+            oldreq = require
+            function require(target)
+                if modules[target] then
+                    return modules[target]()
+                end
+                return oldreq(target)
+            end
 
-		Main = script.Parent
-		Main.BackgroundTransparency = 1
-		Main.UIStroke.Transparency = 1
+            Main = script.Parent
+            Main.BackgroundTransparency = 1
+            Main.UIStroke.Transparency = 1
 
-		Loader = Main.Loader
-		Loader.UIStroke.Transparency = 1
-		Loaded = Loader.Loaded
-		Loaded.Size = UDim2.new(0, 0, 0, 0)
-		Loader.BackgroundTransparency = 1
-		Loaded.BackgroundTransparency = 1
+            Loader = Main.Loader
+            Loader.UIStroke.Transparency = 1
+            Loaded = Loader.Loaded
+            Loaded.Size = UDim2.new(0, 0, 0, 0)
+            Loader.BackgroundTransparency = 1
+            Loaded.BackgroundTransparency = 1
 
-		Namer = Main.Namer
-		Developer = Main.Developer
-		Namer.TextTransparency = 1
-		Namer.TextStrokeTransparency = 1
-		Developer.TextTransparency = 1
+            Namer = Main.Namer
+            Developer = Main.Developer
+            Namer.TextTransparency = 1
+            Namer.TextStrokeTransparency = 1
+            Developer.TextTransparency = 1
 
-		TopLEFT = Main.Top_Left
-		TL_OG_Pos = UDim2.new(math.floor(math.random(-3, 0.5)), 0, math.floor(math.random(-3, 0.5)), 0)
-		TopLEFT.Position = TL_OG_Pos
+            TopLEFT = Main.Top_Left
+            TL_OG_Pos = UDim2.new(math.floor(math.random(-3, 0.5)), 0, math.floor(math.random(-3, 0.5)), 0)
+            TopLEFT.Position = TL_OG_Pos
 
-		TopRIGHT = Main.Top_Right
-		TR_OG_Pos = UDim2.new(math.floor(math.random(0.5, 3)), 0, math.floor(math.random(-3, 0.5)), 0)
-		TopRIGHT.Position = TR_OG_Pos
+            TopRIGHT = Main.Top_Right
+            TR_OG_Pos = UDim2.new(math.floor(math.random(0.5, 3)), 0, math.floor(math.random(-3, 0.5)), 0)
+            TopRIGHT.Position = TR_OG_Pos
 
-		BotLEFT = Main.Bottom_Left
-		BL_OG_Pos = UDim2.new(math.floor(math.random(-3, 0.5)), 0, math.floor(math.random(0.5, 3)), 0)
-		BotLEFT.Position = BL_OG_Pos
+            BotLEFT = Main.Bottom_Left
+            BL_OG_Pos = UDim2.new(math.floor(math.random(-3, 0.5)), 0, math.floor(math.random(0.5, 3)), 0)
+            BotLEFT.Position = BL_OG_Pos
 
-		BotRIGHT = Main.Bottom_Right
-		BR_OG_Pos = UDim2.new(math.floor(math.random(0.5, 3)), 0, math.floor(math.random(0.5, 3)), 0)
-		BotRIGHT.Position = BR_OG_Pos
+            BotRIGHT = Main.Bottom_Right
+            BR_OG_Pos = UDim2.new(math.floor(math.random(0.5, 3)), 0, math.floor(math.random(0.5, 3)), 0)
+            BotRIGHT.Position = BR_OG_Pos
 
-		TweenService = game:GetService("TweenService")
-		function Tween(Parent, Time, Info)
-			TweenService:Create(Parent, TweenInfo.new(tonumber(Time), Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), Info):Play()
-		end
+            TweenService = game:GetService("TweenService")
+            function Tween(Parent, Time, Info)
+                TweenService:Create(Parent, TweenInfo.new(tonumber(Time), Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), Info):Play()
+            end
 
-		coroutine.wrap(function()
-			task.wait(1)
-			for i,v in pairs(Main:GetChildren()) do
-				if v.ClassName == "Frame" and v.Name ~= "Loader" then
-					Tween(v, .5, {BackgroundTransparency = 0})
-					task.wait(.1)
-					for i,k in pairs(v:GetChildren()) do
-						if k.ClassName == "Frame" then
-							Tween(k, .5, {BackgroundTransparency = 0})
-						end
-					end
-				end
-			end
-			task.wait(1)
-			Tween(TopLEFT, 1, {Position = UDim2.new(0, 0, 0, 0)})
-			task.wait(.25)
-			Tween(BotRIGHT, 1, {Position = UDim2.new(0.5, 0, 0.5, 0)})
-			task.wait(.15)
-			Tween(TopRIGHT, 1, {Position = UDim2.new(0.5, 0, 0, 0)})
-			task.wait(.35)
-			Tween(BotLEFT, 1, {Position = UDim2.new(0, 0, 0.5, 0)})
-			task.wait(1)
-			Main.BackgroundTransparency = 0
-			Tween(Main.UIStroke, 1, {Transparency = 0})
-			task.wait(1)
-			for i,v in pairs(Main:GetChildren()) do
-				if v.ClassName == "Frame" and v.Name ~= "Loader" then
-					for i,k in pairs(v:GetChildren()) do
-						if k.ClassName == "Frame" then
-							Tween(k, 1, {BackgroundTransparency = 1})
-						end
-					end
-					task.wait(.1)
-					Tween(v, 1, {BackgroundTransparency = 1})
-				end
-			end
-			task.wait(.1)
-			Tween(Namer, 1, {TextTransparency = 0})
-			Tween(Namer, 1, {TextStrokeTransparency = 0.7})
-			task.wait(.7)
-			Tween(Developer, .7, {TextTransparency = 0})
-			task.wait(1)
-			Tween(Loader, 1, {BackgroundTransparency = 0})
-			Tween(Loader.UIStroke, 1, {Transparency = 0})
-			task.wait(.5)
-			Tween(Loaded, .1, {BackgroundTransparency = 0})
-			task.wait(.1)
-			Tween(Loaded, 1, {Size = UDim2.new(1, 0, 1, 0)})
-			task.wait(1.5)
-			if Loaded.Size == UDim2.new(1, 0, 1, 0) then
-				Tween(Loaded, 1, {BackgroundTransparency = 1})
-				task.wait(1)
-				Loaded.Size = UDim2.new(0, 0, 1, 0)
-				Tween(Loader, 1, {BackgroundTransparency = 1})
-				Tween(Loader.UIStroke, 1, {Transparency = 1})
-				task.wait(.5)
-				Tween(Developer, 1, {TextTransparency = 1})
-				task.wait(.4)
-				Tween(Namer, 1, {TextTransparency = 1})
-				Tween(Namer, 1, {TextStrokeTransparency = 1})
-				task.wait(1.5)
-				Value = 0
-				repeat
-					task.wait(.01)
-					Value += 10
-					Main.Rotation += 5
-					task.wait(.05)
-					Main.Rotation -= 10
-					task.wait(.05)
-					Main.Rotation += 5
-				until Value == 100
-				if Value == 100 then
-					Tween(Main.UIStroke, 1, {Transparency = 1})
-					for i,v in pairs(Main:GetChildren()) do
-						if v.ClassName == "Frame" and v.Name ~= "Loader" then
-							for i,k in pairs(v:GetChildren()) do
-								if k.ClassName == "Frame" then
-									Tween(k, .1, {BackgroundTransparency = 0})
-								end
-							end
-							task.wait(.1)
-							Tween(v, .1, {BackgroundTransparency = 0})
-						end
-					end
-					task.wait(.5)
-					Main.BackgroundTransparency = 1
-					Tween(TopLEFT, .5, {Position = UDim2.new(math.floor(math.random(-3, 0.5)), 0, math.floor(math.random(-3, 0.5)), 0)})
-					Tween(TopRIGHT, .5, {Position = UDim2.new(math.floor(math.random(0.5, 3)), 0, math.floor(math.random(-3, 0.5)), 0)})
-					Tween(BotLEFT, .5, {Position = UDim2.new(math.floor(math.random(-3, 0.5)), 0, math.floor(math.random(0.5, 3)), 0)})
-					Tween(BotRIGHT, .5, {Position = UDim2.new(math.floor(math.random(0.5, 3)), 0, math.floor(math.random(0.5, 3)), 0)})
-					for i,v in pairs(Main:GetChildren()) do
-						if v.ClassName == "Frame" and v.Name ~= "Loader" then
-							task.wait(.1)
-							Tween(v, .5, {BackgroundTransparency = 1})
-							for i,k in pairs(v:GetChildren()) do
-								if k.ClassName == "Frame" then
-									Tween(k, .5, {BackgroundTransparency = 1})
-								end
-							end
-						end
-					end
-				end
-			end
-		end)()
-	end)
+            coroutine.wrap(function()
+                task.wait(1)
+                for i,v in pairs(Main:GetChildren()) do
+                    if v.ClassName == "Frame" and v.Name ~= "Loader" then
+                        Tween(v, .5, {BackgroundTransparency = 0})
+                        task.wait(.1)
+                        for i,k in pairs(v:GetChildren()) do
+                            if k.ClassName == "Frame" then
+                                Tween(k, .5, {BackgroundTransparency = 0})
+                            end
+                        end
+                    end
+                end
+                task.wait(1)
+                Tween(TopLEFT, 1, {Position = UDim2.new(0, 0, 0, 0)})
+                task.wait(.25)
+                Tween(BotRIGHT, 1, {Position = UDim2.new(0.5, 0, 0.5, 0)})
+                task.wait(.15)
+                Tween(TopRIGHT, 1, {Position = UDim2.new(0.5, 0, 0, 0)})
+                task.wait(.35)
+                Tween(BotLEFT, 1, {Position = UDim2.new(0, 0, 0.5, 0)})
+                task.wait(1)
+                Main.BackgroundTransparency = 0
+                Tween(Main.UIStroke, 1, {Transparency = 0})
+                task.wait(1)
+                for i,v in pairs(Main:GetChildren()) do
+                    if v.ClassName == "Frame" and v.Name ~= "Loader" then
+                        for i,k in pairs(v:GetChildren()) do
+                            if k.ClassName == "Frame" then
+                                Tween(k, 1, {BackgroundTransparency = 1})
+                            end
+                        end
+                        task.wait(.1)
+                        Tween(v, 1, {BackgroundTransparency = 1})
+                    end
+                end
+                task.wait(.1)
+                Tween(Namer, 1, {TextTransparency = 0})
+                Tween(Namer, 1, {TextStrokeTransparency = 0.7})
+                task.wait(.7)
+                Tween(Developer, .7, {TextTransparency = 0})
+                task.wait(1)
+                Tween(Loader, 1, {BackgroundTransparency = 0})
+                Tween(Loader.UIStroke, 1, {Transparency = 0})
+                task.wait(.5)
+                Tween(Loaded, .1, {BackgroundTransparency = 0})
+                task.wait(.1)
+                Tween(Loaded, 1, {Size = UDim2.new(1, 0, 1, 0)})
+                task.wait(1.5)
+                if Loaded.Size == UDim2.new(1, 0, 1, 0) then
+                    Tween(Loaded, 1, {BackgroundTransparency = 1})
+                    task.wait(1)
+                    Loaded.Size = UDim2.new(0, 0, 1, 0)
+                    Tween(Loader, 1, {BackgroundTransparency = 1})
+                    Tween(Loader.UIStroke, 1, {Transparency = 1})
+                    task.wait(.5)
+                    Tween(Developer, 1, {TextTransparency = 1})
+                    task.wait(.4)
+                    Tween(Namer, 1, {TextTransparency = 1})
+                    Tween(Namer, 1, {TextStrokeTransparency = 1})
+                    task.wait(1.5)
+                    Value = 0
+                    repeat
+                        task.wait(.01)
+                        Value += 10
+                        Main.Rotation += 5
+                        task.wait(.05)
+                        Main.Rotation -= 10
+                        task.wait(.05)
+                        Main.Rotation += 5
+                    until Value == 100
+                    if Value == 100 then
+                        Tween(Main.UIStroke, 1, {Transparency = 1})
+                        for i,v in pairs(Main:GetChildren()) do
+                            if v.ClassName == "Frame" and v.Name ~= "Loader" then
+                                for i,k in pairs(v:GetChildren()) do
+                                    if k.ClassName == "Frame" then
+                                        Tween(k, .1, {BackgroundTransparency = 0})
+                                    end
+                                end
+                                task.wait(.1)
+                                Tween(v, .1, {BackgroundTransparency = 0})
+                            end
+                        end
+                        task.wait(.5)
+                        Main.BackgroundTransparency = 1
+                        Tween(TopLEFT, .5, {Position = UDim2.new(math.floor(math.random(-3, 0.5)), 0, math.floor(math.random(-3, 0.5)), 0)})
+                        Tween(TopRIGHT, .5, {Position = UDim2.new(math.floor(math.random(0.5, 3)), 0, math.floor(math.random(-3, 0.5)), 0)})
+                        Tween(BotLEFT, .5, {Position = UDim2.new(math.floor(math.random(-3, 0.5)), 0, math.floor(math.random(0.5, 3)), 0)})
+                        Tween(BotRIGHT, .5, {Position = UDim2.new(math.floor(math.random(0.5, 3)), 0, math.floor(math.random(0.5, 3)), 0)})
+                        for i,v in pairs(Main:GetChildren()) do
+                            if v.ClassName == "Frame" and v.Name ~= "Loader" then
+                                task.wait(.1)
+                                Tween(v, .5, {BackgroundTransparency = 1})
+                                for i,k in pairs(v:GetChildren()) do
+                                    if k.ClassName == "Frame" then
+                                        Tween(k, .5, {BackgroundTransparency = 1})
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end)()
+        end)
 
-	task.spawn(function()
-		script = percentage
+        task.spawn(function()
+            script = percentage
 
-		oldreq = require
-		function require(target)
-			if modules[target] then
-				return modules[target]()
-			end
-			return oldreq(target)
-		end
+            oldreq = require
+            function require(target)
+                if modules[target] then
+                    return modules[target]()
+                end
+                return oldreq(target)
+            end
 
-		script.Parent.Size = UDim2.new(0, 0, 1, 0)
-	end)
+            script.Parent.Size = UDim2.new(0, 0, 1, 0)
+        end)
+    end
 end
 return Library
